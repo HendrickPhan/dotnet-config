@@ -1,0 +1,19 @@
+﻿@page
+@model IndexModel
+@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
+
+@{
+    ViewData["Title"] = "Home page";
+    var MyConfig_Key1 = Configuration["MyConfig:Key1"];
+    var MyConfig_Key2 = Configuration["MyConfig:Key2"];
+    var MyConfig2 = Configuration["MySecondConfig"];
+    var ConfigNotExists = Configuration["ConfigNotExists"];
+}
+
+<div class="text-center">
+    <h1 class="display-4">MyConfig_Key1 is @MyConfig_Key1</h1>
+    <h1 class="display-4">MyConfig_Key2 is @MyConfig_Key2</h1>
+    <h1 class="display-4">MyConfig2 is @MyConfig2</h1>
+    <h1 class="display-4">ConfigNotExists is @ConfigNotExists</h1>
+</div>
